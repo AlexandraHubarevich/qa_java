@@ -20,6 +20,7 @@ public class CatTest {
     public void catGetSoundTest() {
         Cat cat = new Cat(feline);
         assertEquals("Мяу", cat.getSound());
+
     }
 
 

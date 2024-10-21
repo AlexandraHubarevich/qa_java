@@ -9,8 +9,8 @@ public class Alex extends Lion {
     }
 
     public List<String> getFriends() {
-        List<String> AlexFriends = List.of("Zebra: Marty", "Hippopotamus: Gloria", "Giraffe: Melman");
-        return AlexFriends;
+        List<String> AlexFriends=List.of("Zebra: Marty", "Hippopotamus: Gloria", "Giraffe: Melman");
+                return AlexFriends;
     }
 
     public String getPlaceOfLiving() {

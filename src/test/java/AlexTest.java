@@ -14,6 +14,7 @@ public class AlexTest {
     @Mock
     private Feline feline;
 
+
     @Test
     public void getFriendsAlex() throws Exception {
 

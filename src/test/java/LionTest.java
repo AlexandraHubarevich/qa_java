@@ -8,6 +8,7 @@ import org.mockito.Mockito;
 import org.mockito.junit.MockitoJUnitRunner;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 
 @RunWith(MockitoJUnitRunner.class)
@@ -20,15 +21,17 @@ public class LionTest {
     @Test
     public void lionGetKittens() throws Exception {
         Lion lion = new Lion("Самец", feline);
-        lion.getKittens();
-        Mockito.verify(feline, Mockito.times(1)).getKittens();
+        Mockito.when(feline.getKittens()).thenReturn(2);
+        //lion.getKittens();
+        assertEquals(2,  lion.getKittens());
+       // Mockito.verify(feline, Mockito.times(1)).getKittens();
 
     }
 
     @Test
     public void hasManeLion() throws Exception {
         Lion lion = new Lion("Самец", feline);
-        assertEquals(true, lion.doesHaveMane());
+        assertTrue(lion.doesHaveMane());
     }
 
 

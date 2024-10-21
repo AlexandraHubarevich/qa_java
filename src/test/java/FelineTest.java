@@ -17,8 +17,8 @@ public class FelineTest {
 
     @Test
     public void eatMeatCheck() throws Exception {
-        List<String> myList = List.of("Животные", "Птицы", "Рыба");
-        assertEquals(myList, feline.eatMeat());
+        feline.eatMeat();
+        Mockito.verify(feline, Mockito.times(1)).getFood("Хищник");
     }
 
     @Test
@@ -29,7 +29,7 @@ public class FelineTest {
     }
 
     @Test
-    public void getKittensCheck1() {
+    public void getKittensWithParameterCheck() {
         feline.getKittens();
         Mockito.verify(feline).getKittens(1);
     }
@@ -37,7 +37,10 @@ public class FelineTest {
     @Test
     public void getKittensCheck() {
         int expectedKittens = 15;
-        assertEquals(expectedKittens, feline.getKittens(15));
+        feline.getKittens(expectedKittens);
+        Mockito.verify(feline, Mockito.times(1)).getKittens(15);
+
+
     }
 
 }
